@@ -1,0 +1,19 @@
+{
+  "name": "sinblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "BigLiao",
+  "license": "MIT",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "fs-extra": "^8.1.0",
+    "glob": "^7.1.4",
+    "highlight.js": "^9.15.10",
+    "markdown-it": "^9.1.0"
+  }
+}
