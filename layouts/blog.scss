@@ -1,0 +1,13 @@
+h1 {
+    color: red;
+}
+p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+.item {
+    display: flex;
+    .box {
+        transform: translate(20px, 10px);
+    }
+}
