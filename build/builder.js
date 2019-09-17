@@ -4,12 +4,25 @@ const path = require('path');
 const ejs = require('ejs');
 const fs = require('fs-extra');
 const MarkdownIt = require('markdown-it');
+const hljs = require('highlight.js');
+const MarkdownItKatex = require('@iktakahiro/markdown-it-katex');
 
 class Builder {
     constructor() {
         this.blogPathList = [];
         this.blogDir = path.resolve(__dirname, '../blogs/**/*.md');
-        this.markdownParser = new MarkdownIt();
+        this.markdownParser = new MarkdownIt({
+            highlight: function (str, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                  try {
+                    return hljs.highlight(lang, str).value;
+                  } catch (__) {}
+                }
+            
+                return ''; // use external default escaping
+              }
+        });
+        this.markdownParser.use(MarkdownItKatex);
         this.templatePath = path.resolve(__dirname, '../layouts/blog.ejs');
         this.distPath = path.resolve(__dirname, '../dist');
         try {
@@ -21,7 +34,9 @@ class Builder {
 
     async run() {
         await this.scanMarkdown();
-        this.parseMarkdown(this.blogPathList[0]);
+        for (let i = 0; i < this.blogPathList.length; i++) {
+            this.parseMarkdown(this.blogPathList[i]);
+        }
     }
 
     scanMarkdown() {
