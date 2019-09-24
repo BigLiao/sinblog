@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development node lib/dev/dev",
-    "build": "cross-env NODE_ENV=production node lib/build/build"
+    "dev": "cross-env NODE_ENV=development node lib/dev/index",
+    "build": "cross-env NODE_ENV=production node lib/build/index"
   },
   "keywords": [],
   "author": "BigLiao",
