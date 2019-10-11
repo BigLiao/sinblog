@@ -1,3 +1,5 @@
+import './nav.scss';
+
 // 判断路由，设置当前导航高亮
 const pathname = location.pathname;
 const routes = {

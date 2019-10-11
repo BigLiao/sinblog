@@ -1,11 +1,17 @@
 <nav>
-    <%- include('../nav/nav') %>
+  <%- include('../nav/nav') %>
 </nav>
-<main>
-    <div class="markdown-body">
+<main class="container pt-2">
+  <div class="row">
+    <div class="col-lg-9">
+      <div class="markdown-body">
         <%- content %>
+      </div>
     </div>
+    <div class="col-lg-3 d-lg-block d-none">边栏</div>
+  </div>
+  
 </main>
 <footer>
-    <%- include('../footer/footer') %>
+  <%- include('../footer/footer') %>
 </footer>
