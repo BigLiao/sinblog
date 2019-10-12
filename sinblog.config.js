@@ -3,6 +3,7 @@
  */
 
 module.exports = {
+  theme: 'default',
   pages: {
     home: {
       layout: './layouts/home',

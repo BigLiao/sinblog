@@ -8,12 +8,12 @@ const routes = {
   about: /\/about(\/.+|$)/,
 };
 
-// $(`#navbarSupportedContent .nav-item`).removeClass('active')
-Object.keys(routes).forEach(key => {
-  if (routes[key].test(pathname)) {
-    // 匹配了当前路由
-    $(`#navbarSupportedContent .nav-item.${key}`).addClass('active');
-  } else {
-    $(`#navbarSupportedContent .nav-item.${key}`).removeClass('active');
-  }
-});
+// // $(`#navbarSupportedContent .nav-item`).removeClass('active')
+// Object.keys(routes).forEach(key => {
+//   if (routes[key].test(pathname)) {
+//     // 匹配了当前路由
+//     $(`#navbarSupportedContent .nav-item.${key}`).addClass('active');
+//   } else {
+//     $(`#navbarSupportedContent .nav-item.${key}`).removeClass('active');
+//   }
+// });

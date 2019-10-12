@@ -9,6 +9,84 @@ author: liao
 
 ## 主定理的定义
 
+```js
+const path = require('path');
+const merge = require('webpack-merge');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const baseWebpackConfig = require('../webpack/base-config');
+const config = require('../../config');
+
+const { resolve } = require('../util');
+
+function generateWebpackPageConfig({
+  pageName,
+  template,
+  entry,
+  filename
+}) {
+  const webpackConfig = {
+    mode: 'development',
+    entry: {
+      [pageName]: [entry],
+    },
+    output: {
+      filename: '[name].js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.ejs$/,
+          use: 'ejs-loader'
+        },
+        {
+          test: /\.md$/,
+          use: 'raw-loader'
+        }
+      ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            filename: filename,
+            template: template,
+            chunks: [pageName]
+        }),
+        new webpack.HotModuleReplacementPlugin(),
+        new webpack.ProvidePlugin({
+            _: "underscore"
+        })
+    ]
+  };
+  return webpackConfig;
+}
+
+function getWebpackConfig() {
+  const homeWebpackConfig = generateWebpackPageConfig({
+    pageName: 'home',
+    template: resolve('.temp', 'home.html'),
+    entry: resolve('.temp/home-entry.js'),
+    filename: 'index.html'
+  });
+
+  const blogWebpackConfig = generateWebpackPageConfig({
+    pageName: 'blog',
+    template: resolve('.temp', 'blog.html'),
+    entry: resolve('.temp/blog-entry.js'),
+    filename: 'blog/index.html'
+  });
+
+  const aboutWebpackConfig = generateWebpackPageConfig({
+    pageName: 'about',
+    template: resolve('.temp', 'about.html'),
+    entry: resolve('.temp/about-entry.js'),
+    filename: 'about/index.html'
+  });
+  return merge(baseWebpackConfig, homeWebpackConfig, blogWebpackConfig, aboutWebpackConfig);
+}
+
+module.exports = getWebpackConfig;
+```
+
 分治法的三个步骤是：**分**、**治**、**合**，时间复杂度 $T(n)$ 容易用递推式表示。
 
 递推式的求解有三种方法：**代入法**、**递归树法**和**主定理**。**主定理**是一种*无脑推导*的求解方法。对应的一般递推式形如

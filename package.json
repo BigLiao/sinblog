@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cross-env NODE_ENV=development node lib/dev/index",
+    "dev": "cross-env NODE_ENV=development nodemon lib/dev/index",
     "build": "cross-env NODE_ENV=production node lib/build/index"
   },
   "keywords": [],
@@ -16,6 +16,7 @@
     "@babel/preset-env": "^7.6.0",
     "@iktakahiro/markdown-it-katex": "^3.1.0",
     "babel-loader": "^8.0.6",
+    "bootstrap": "^4.3.1",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^6.0.0",
     "css-loader": "^3.2.0",
@@ -31,6 +32,7 @@
     "highlight.js": "^9.15.10",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "jquery": "^3.4.1",
     "katex": "^0.11.1",
     "markdown-air": "^0.0.4",
     "markdown-it": "^9.1.0",

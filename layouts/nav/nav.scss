@@ -1,3 +1,10 @@
 .navbar {
-    border-bottom: 1px solid #c5c5c5d7;
+  background: var(--top-bg-color);
+  color: var(--top-color);
+  .navbar-brand {
+    
+  }
+  * {
+    color: inherit;
+  }
 }
