@@ -5,8 +5,8 @@
 module.exports = {
   theme: 'default',
   pages: {
-    home: {
-      layout: './layouts/home',
+    list: {
+      layout: './layouts/list',
       content: './README.md'
     },
     blog: {

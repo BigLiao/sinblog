@@ -1,0 +1,20 @@
+<%- include('../nav/nav.ejs') %>
+
+<div class="container">
+  <div class="mt-5">
+    <article>
+      <div class="blog-list row">
+        <% for(var i = 0; i < 10; i++) {%>
+        <div class="blog-item col-12 col-md-6 col-lg-4">
+          <a class="blog-item-link m-md-2 py-1 py-md-4 px-2 px-md-4" href="/blog">
+            <h3>小灰的算法之旅</h3>
+            <p>什么是算法？为什么算法值得研究？相对于计算机中使用的其他技术来说算法的作用是什么？本章我们来回答这些问题。</p>
+          </a>
+        </div>
+        <% } %>
+      </div>
+    </article>
+  </div>
+</div>
+
+<%- include('../footer/footer.ejs') %>
