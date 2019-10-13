@@ -127,13 +127,14 @@ html {
 html,
 body {
   background-color: var(--bg-color);
-  font-family: "PT Serif", "Times New Roman", Times, serif;
-  // font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
   color: var(--text-color);
   line-height: 1.5em;
 }
 
 .markdown-body {
+  font-family: "PT Serif", "Times New Roman", Times, serif;
   ol li {
     list-style-type: decimal;
     list-style-position: outside;
