@@ -14,7 +14,7 @@ function generateBlogItem({
     <h3>
       ${title}
     </h3>
-    <div class="blot-item-content">
+    <div class="blog-item-content">
       ${content}
     </div>
   </div>
