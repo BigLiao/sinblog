@@ -8,10 +8,12 @@ module.exports = {
   blogPages: [
     {
       title: '技术',
-      path: './blog/技术'
+      path: './blog/技术',
+      urlPath: '/technique'
     }, {
       title: '文学',
-      path: './blog/文学'
+      path: './blog/文学',
+      urlPath: '/literature'
     }
   ],
   pages: {
