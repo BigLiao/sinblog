@@ -4,5 +4,6 @@ node_modules
 .temp
 types
 dist
+blog
 
 package-lock.json
