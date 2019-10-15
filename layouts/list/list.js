@@ -6,11 +6,11 @@ require('../style');
 const Masonry = require('masonry-layout');
 
 function generateBlogItem({
-  title, content
+  title, content, path
 }) {
   return `
 <div class="blog-item col-12 col-md-6 col-lg-4">
-  <div class="blog-item-link m-md-2 py-1 py-md-4 px-2 px-md-4" data-href="/blog">
+  <div class="blog-item-link m-md-2 py-1 py-md-4 px-2 px-md-4" data-href="${path}">
     <h3>
       ${title}
     </h3>
@@ -24,7 +24,6 @@ function generateBlogItem({
 
 
 function render(blogInfoList) {
-  console.log(blogInfoList);
   const page = {
     pageSize: 100,
     total: blogInfoList.length,

@@ -1,33 +1,19 @@
 /**
- * 配置页面路径
+ * @description SinBlog 配置文件
  */
 
 module.exports = {
   theme: 'default',
-  blogDir: './blog',
+  blogRoot: './blog',
   blogPages: [
     {
       title: '技术',
-      path: './blog/技术',
-      urlPath: '/technique'
+      dirName: '技术',
+      path: '/technique'
     }, {
       title: '文学',
-      path: './blog/文学',
-      urlPath: '/literature'
+      dirName: '文学',
+      path: '/literature'
     }
   ],
-  pages: {
-    list: {
-      layout: './layouts/list',
-      content: './README.md'
-    },
-    blog: {
-      layout: './layouts/blog',
-      content: 'blog'
-    },
-    about: {
-      layout: './layouts/about',
-      content: './README.md'
-    }
-  }
 }

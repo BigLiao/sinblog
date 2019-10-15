@@ -289,7 +289,6 @@ body {
 
   code {
     color: var(--code-color);
-    padding: 1em .6em;
     overflow: auto;
   }
 
@@ -303,8 +302,8 @@ body {
   pre,
   code,
   tt {
-    font-size: 0.875em;
-    line-height: 1.714285em;
+    // font-size: 0.875em;
+    // line-height: 1.714285em;
   }
 
   h1 {

@@ -9,4 +9,9 @@ img {
 }
 code {
     overflow: auto;
+    display: inline-block;
+    vertical-align: middle;
+}
+.hljs-code {
+    display: block;
 }
