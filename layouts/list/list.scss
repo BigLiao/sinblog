@@ -11,7 +11,10 @@ ul {
     margin-bottom: 0.6em;
   }
   img {
+    display: block;
     max-width: 100%;
+    margin: 0.6em auto;
+    text-align: center;
   }
   p {
     margin-bottom: 0;
