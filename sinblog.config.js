@@ -1,5 +1,5 @@
 /**
- * @description SinBlog 配置文件
+ * @file SinBlog 配置文件
  */
 
 /**
