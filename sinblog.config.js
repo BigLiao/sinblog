@@ -4,16 +4,7 @@
 
 module.exports = {
   theme: 'default',
-  blogRoot: './blog',
-  blogPages: [
-    {
-      title: '技术',
-      dirName: '技术',
-      path: '/technique'
-    }, {
-      title: '文学',
-      dirName: '文学',
-      path: '/literature'
-    }
-  ],
+  siteName: 'SinBlog 赛因博客',
+  blogRoot: './test/blog',
+  blogPages: [],
 }
