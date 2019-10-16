@@ -30,6 +30,7 @@
     "file-loader": "^4.2.0",
     "front-matter": "^3.0.2",
     "fs-extra": "^8.1.0",
+    "gh-pages": "^2.1.1",
     "glob": "^7.1.4",
     "highlight.js": "^9.15.10",
     "html-loader": "^0.5.5",
