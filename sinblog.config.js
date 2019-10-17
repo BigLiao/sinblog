@@ -3,7 +3,7 @@
  */
 
 /**
- * 
+ *
  * @param {Object} pageConfig - 博客页面配置参数
  * @param {string} pageConfig.title - 页面标题
  * @param {string} pageConfig.dirName - 博客子目录，相对于 blogRoot 路径
@@ -12,7 +12,7 @@
 module.exports = {
   theme: 'default',
   siteName: 'SinBlog 赛因博客',
-  blogRoot: './test/blog',
+  blogRoot: './docs',
   blogPages: [
     {
       title: '技术',
