@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Sin·Blog",
-    "author": "BigLiao"
+    "author": "Liao"
   },
   "build": {
     "theme": "default",
@@ -11,9 +11,13 @@
         "dirPath": "docs/技术",
         "urlPath": "tech"
       }, {
-        "title": "博客",
-        "dirPath": "docs/博客",
-        "urlPath": "blog"
+        "title": "文学",
+        "dirPath": "docs/文学",
+        "urlPath": "literal"
+      }, {
+        "title": "文档",
+        "dirPath": "docs/文档",
+        "urlPath": "docs"
       }
     ]
   }
