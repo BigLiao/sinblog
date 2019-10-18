@@ -16,7 +16,10 @@
           更多
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">关于我</a>
+          <% otherLinks.forEach(function(nav) { %>
+            <a class="dropdown-item" href="<%= nav.url %>"><%= nav.title %></a>
+          <% }) %>
+
           <a class="dropdown-item" href="#">Github</a>
         </div>
       </li>

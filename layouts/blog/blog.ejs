@@ -1,4 +1,6 @@
-<%- include('../nav/nav', navList) %>
+<%- include('../nav/nav', {
+  navList, otherLinks
+}) %>
 
 <main class="container pt-2">
   <div class="row">
@@ -9,7 +11,7 @@
     </div>
     <div class="col-lg-3 d-lg-block d-none"></div>
   </div>
-  
+
 </main>
 
 <%- include('../footer/footer') %>

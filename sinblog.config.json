@@ -1,5 +1,19 @@
 {
-  "theme": "default",
-  "title": "Sin·Blog",
-  "author": "BigLiao"
+  "site": {
+    "title": "Sin·Blog",
+    "author": "BigLiao"
+  },
+  "build": {
+    "theme": "default",
+    "blogPage": [
+      {
+        "title": "技术",
+        "dirPath": "docs/技术",
+        "urlPath": "tech"
+      }, {
+        "title": "文学",
+        "dirPath": "docs/文学"
+      }
+    ]
+  }
 }
