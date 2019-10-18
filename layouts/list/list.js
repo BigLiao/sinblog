@@ -47,21 +47,23 @@ function render(blogInfoList) {
     const blogListHtml = blogInfoList.slice(page.current * page.pageSize, (page.current + 1) * page.pageSize)
       .map(info => generateBlogItem(info)).join('');
     page.current++;
-    
+
     document.getElementById('blogList').innerHTML = blogListHtml;
 
-    setTimeout(() => {
-      const msnry = new Masonry( '.blog-list', {
-        // options
-        itemSelector: '.blog-item',
-      });
-    }, 2000);
+    const msnry = new Masonry( '.blog-list', {
+      // options
+      itemSelector: '.blog-item',
+    });
 
     $('.blog-item-link').on('click', (x) => {
       const el = x.currentTarget;
       if (el.dataset.href) {
         window.location = el.dataset.href
       }
+    });
+
+    $('.blog-item img').on('load', () => {
+      msnry.layout();
     })
 
   }

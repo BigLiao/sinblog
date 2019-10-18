@@ -11,6 +11,7 @@
         <a class="nav-link <% nav.active ? 'active' : '' %>" href="<%= nav.path %>"><%= nav.title %></a>
       </li>
       <% }) %>
+      <% if(otherLinks.length > 0) { %>
       <li class="nav-item other dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           更多
@@ -19,10 +20,9 @@
           <% otherLinks.forEach(function(nav) { %>
             <a class="dropdown-item" href="<%= nav.url %>"><%= nav.title %></a>
           <% }) %>
-
-          <a class="dropdown-item" href="#">Github</a>
         </div>
       </li>
+      <% } %>
     </ul>
   </div>
 </nav>
