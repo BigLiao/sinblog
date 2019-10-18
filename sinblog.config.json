@@ -11,8 +11,9 @@
         "dirPath": "docs/技术",
         "urlPath": "tech"
       }, {
-        "title": "文学",
-        "dirPath": "docs/文学"
+        "title": "博客",
+        "dirPath": "docs/博客",
+        "urlPath": "blog"
       }
     ]
   }
