@@ -19,7 +19,7 @@ function generateBlogItem({
   const dateFormated = formatDate(date);
   return `
 <div class="blog-item col-12 col-md-6 col-lg-4">
-  <div class="blog-item-link m-md-2 py-1 py-md-4 px-2 px-md-4" data-href="${path}">
+  <div class="blog-item-link m-2 m-md-2 py-1 py-md-4 px-2 px-md-4" data-href="${path}">
     <h3>
       ${title}
     </h3>
