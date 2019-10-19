@@ -1,12 +1,13 @@
 site:
-  title: Sin·Blog # 网站标题
+  title: Sin·Blog # Site name and title
   author: BigLiao
 
 build:
-  theme: default # 主题，目前只支持 default
+  theme: default # Only support default so far
   blogPage:
-    - title: 技术
-      dirPath: docs/技术
-      urlPath: tech
-    - title: 文学
-      dirPath: docs/文学
+    - title: Technique
+      dirPath: ./technique
+      urlPath: technique
+    - title: Literature
+      dirPath: ./literature
+      urlPath: literature

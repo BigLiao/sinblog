@@ -1,4 +1,8 @@
 site:
-  theme: default
   title: 测试
   author: liao
+build:
+  theme: default
+  blogPage:
+    dirPath: ./docs/literature
+    urlPath: literature
