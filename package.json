@@ -2,6 +2,8 @@
   "name": "sinblog",
   "version": "0.1.1",
   "description": "An elegant blog site generator",
+  "repository": "https://github.com/BigLiao/sinblog",
+  "homepage": "https://bigliao.github.io/sinblog/",
   "bin": {
     "sinblog": "bin/cli.js"
   },

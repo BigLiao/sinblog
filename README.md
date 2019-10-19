@@ -139,15 +139,15 @@ build:
 
 If you have more then one folder as different classes, you can set it an array, as the default demo. 
 
-**build.blogPage[].title**
+###### build.blogPage[].title
 
 Required. Type: string. Show at navbar.
 
-**build.blogPage[].dirPath**
+###### build.blogPage[].dirPath
 
 Required. Type: string. Relative path.
 
-**build.blogPage[].urlPath**
+###### build.blogPage[].urlPath
 
 Optional. Type: string. A sub URL path. If not specified, SinBlog will take the dirname.
 
@@ -159,7 +159,7 @@ If your website is in a subdirectory (such as `http://example.org/blog`),  you h
 
 
 
-## Build
+### Build
 
 Run just one command `sinblog build` in `<YOUR_BLOG_FOLDER>`.
 
@@ -171,7 +171,7 @@ sinblog build
 
 SinBlog will generate a `.temp` folder and a `dist` folder in `<YOUR_BLOG_FOLDER>`. You should put these into your `.gitignore` file. The `.temp` folder is useless, I will remove it later. The `dist` folder contains final website files.
 
-## Serve
+### Serve
 
 Serve the website locally:
 
@@ -181,9 +181,9 @@ sinblog serve
 
 
 
-## Publish
+### Publish
 
-### Publish to GitHub Pages
+#### Publish to GitHub Pages
 
 If your blog folder is under `git` control, and have related to GitHub....., You can publish your blog to [GitHub Pages](https://pages.github.com/) by SinBlog.
 
