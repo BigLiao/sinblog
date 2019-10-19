@@ -7,17 +7,13 @@
     "theme": "default",
     "blogPage": [
       {
-        "title": "技术",
-        "dirPath": "docs/技术",
-        "urlPath": "tech"
+        "title": "文档",
+        "dirPath": "docs/document",
+        "urlPath": "document"
       }, {
         "title": "文学",
-        "dirPath": "docs/文学",
-        "urlPath": "literal"
-      }, {
-        "title": "文档",
-        "dirPath": "docs/文档",
-        "urlPath": "docs"
+        "dirPath": "docs/literature",
+        "urlPath": "literature"
       }
     ]
   }
