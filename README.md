@@ -37,8 +37,9 @@ Still developing day and night...
 - Searching and tag filter supports
 - More themes
 - Home page and about-me page layouts
+- Upload local images in Markdown
 
-Need other features? You can open an issure.
+Need some other features? You can open an issure.
 
 ## Usage with Trivas CI
 
