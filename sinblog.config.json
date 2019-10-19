@@ -15,6 +15,7 @@
         "dirPath": "docs/literature",
         "urlPath": "literature"
       }
-    ]
+    ],
+    "publicPath": "/sinblog/"
   }
 }

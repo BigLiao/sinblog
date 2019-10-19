@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production node lib/build/index",
     "serve": "node lib/serve/index.js",
-    "deploy": "node lib/cli/publish.js"
+    "publish": "node lib/publish/index.js"
   },
   "keywords": [
     "blog",
