@@ -1,6 +1,6 @@
 {
   "name": "sinblog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An elegant blog site generator",
   "bin": {
     "sinblog": "bin/cli.js"
