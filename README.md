@@ -44,7 +44,7 @@ Need other features? You can open an issure.
 
 By using [GitHUb](https://github.com) and [Trivas CI](https://travis-ci.com/) , It is quite easy to publish your blogs. Just a config file and then no worry about any program and environment stuffs.
 
-[Use SinBlog with Trival CI]()
+[Use SinBlog with Trival CI](https://bigliao.github.io/sinblog/document/Use SinBlog with Travis CI.html)
 
 ## Usage with command line
 
