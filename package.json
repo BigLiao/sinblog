@@ -1,7 +1,7 @@
 {
   "name": "sinblog",
-  "version": "0.0.1",
-  "description": "A markdown blog site generator",
+  "version": "0.1.0",
+  "description": "An elegant blog site generator",
   "bin": {
     "sinblog": "bin/cli.js"
   },

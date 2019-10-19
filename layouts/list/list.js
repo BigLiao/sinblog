@@ -38,35 +38,29 @@ function generateBlogItem({
 
 
 function render(blogInfoList) {
-  const page = {
-    pageSize: 100,
-    total: blogInfoList.length,
-    current: 0
-  }
-  if (page.current * page.pageSize < page.total) {
-    const blogListHtml = blogInfoList.slice(page.current * page.pageSize, (page.current + 1) * page.pageSize)
-      .map(info => generateBlogItem(info)).join('');
-    page.current++;
-
-    document.getElementById('blogList').innerHTML = blogListHtml;
-
-    const msnry = new Masonry( '.blog-list', {
-      // options
-      itemSelector: '.blog-item',
-    });
-
-    $('.blog-item-link').on('click', (x) => {
-      const el = x.currentTarget;
-      if (el.dataset.href) {
-        window.location = el.dataset.href
-      }
-    });
-
-    $('.blog-item img').on('load', () => {
-      msnry.layout();
+  const blogListHtml = blogInfoList
+    .sort((a, b) => {
+      return b.date - a.date
     })
+    .map(info => generateBlogItem(info)).join('');
 
-  }
+  document.getElementById('blogList').innerHTML = blogListHtml;
+
+  const msnry = new Masonry( '.blog-list', {
+    // options
+    itemSelector: '.blog-item',
+  });
+
+  $('.blog-item-link').on('click', (x) => {
+    const el = x.currentTarget;
+    if (el.dataset.href) {
+      window.location = el.dataset.href
+    }
+  });
+
+  $('.blog-item img').on('load', () => {
+    msnry.layout();
+  })
 }
 
 module.exports = render;
