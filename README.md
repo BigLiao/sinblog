@@ -171,6 +171,14 @@ sinblog build
 
 SinBlog will generate a `.temp` folder and a `dist` folder in `<YOUR_BLOG_FOLDER>`. You should put these into your `.gitignore` file. The `.temp` folder is useless, I will remove it later. The `dist` folder contains final website files.
 
+## Serve
+
+Serve the website locally:
+
+```bash
+sinblog serve
+```
+
 
 
 ## Publish
