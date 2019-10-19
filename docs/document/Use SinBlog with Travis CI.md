@@ -8,7 +8,7 @@ Date: 2019-10-10
 
 This tutorial talks about how to use SinBlog with Travis CI to deploy your blog site automatically.
 
-![](/Users/liao/Downloads/Featured4.png)
+![](https://cdn.bigliao.com/c87a9d7ec9e1ec68986522b5e2836e5d.png)
 
 ## Introduction
 
@@ -42,7 +42,7 @@ If you don't know how to use Git or GitHub, may be you are not very appropriate 
 
 Open  [travis-ci.com](https://travis-ci.com/) in your broswer, click the big green button to sign up.
 
-![travis-ci.com](/Users/liao/Desktop/截屏2019-10-1921.21.57.png)
+![travis-ci.com](https://cdn.bigliao.com/de979f8fdcaa0f7a7c6d5405803d105c.png)
 
 Follow the sign up guide and sign in at travis-ci.com.
 
@@ -60,7 +60,7 @@ Follow this document: [Creating a personal access token for the command line](ht
 
 Select scopes as below:
 
-![](/Users/liao/Desktop/截屏2019-10-1921.56.52.png)
+![](https://cdn.bigliao.com/90832375e5b7992c27ba796864688877.png)
 
 Now you have a GitHub Token in your clipboard. Be careful don't lose it because you will not be able to see it again.
 
@@ -68,11 +68,11 @@ Now you have a GitHub Token in your clipboard. Be careful don't lose it because 
 
 Open the Dashboard at travis-ci.com, choose your target repositroy.
 
-![](/Users/liao/Desktop/截屏2019-10-1921.43.22.png) 
+![](https://cdn.bigliao.com/879994784b5aae324962f6fa9ca66624.png) 
 
 Click `More options` -> `Settings`, scroll down, see the Environment Variables part.
 
-![](/Users/liao/Desktop/截屏2019-10-1922.00.32.png)
+![](https://cdn.bigliao.com/55e46521e9b633303faefc81875aedd2.png)
 
 Paste your GitHub Token in VALUE input, and set NAME to `GITHUB_TOKEN`, then click the Add button in the right.
 
