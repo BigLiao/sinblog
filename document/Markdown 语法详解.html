@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Markdown 语法详解 - Sin·Blog</title>
+
+    
+    <link rel="stylesheet" href="/sinblog/assets/css/blog.5fbbaad4.css">
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="/sinblog/">Sin·Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item home">
+        <a class="nav-link active" href="/sinblog/document">文档</a>
+      </li>
+      
+      <li class="nav-item home">
+        <a class="nav-link " href="/sinblog/literature">文学</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</nav>
+
+
+<main class="container pt-2">
+  <div class="row">
+    <div class="col-lg-9">
+      <article class="markdown-body">
+        <h1>Markdown 语法详解</h1>
+<p><img src="https://cdoco.com/images/markdown-syntax.png" alt=""></p>
+<h2>什么是 Markdown ?</h2>
+<blockquote>
+<p>Markdown 是一种可以使用普通文本编辑器编写的标记语言, 通过简单的标记语法, 它可以使普通文本内容具有一定的格式。</p>
+</blockquote>
+<h2>目录</h2>
+<ul>
+<li><a href="#%E5%88%86%E7%BA%A7%E6%A0%87%E9%A2%98">分级标题</a></li>
+<li><a href="#%E5%88%86%E9%9A%94%E7%BA%BF">分隔线</a></li>
+<li><a href="#%E8%B6%85%E9%93%BE%E6%8E%A5">超链接</a>
+<ul>
+<li><a href="#%E8%A1%8C%E5%86%85%E5%BC%8F">行内式</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E5%BC%8F">参考式</a></li>
+<li><a href="#%E8%87%AA%E5%8A%A8%E9%93%BE%E6%8E%A5">自动链接</a></li>
+</ul>
+</li>
+<li><a href="#%E5%8C%BA%E5%9D%97%E5%BC%95%E7%94%A8">区块引用</a>
+<ul>
+<li><a href="#%E5%BC%95%E7%94%A8%E7%9A%84%E5%A4%9A%E5%B1%82%E5%B5%8C%E5%A5%97">引用的多层嵌套</a></li>
+<li><a href="#%E5%BC%95%E7%94%A8%E5%85%B6%E5%AE%83%E8%A6%81%E7%B4%A0">引用其它要素</a></li>
+</ul>
+</li>
+<li><a href="#%E9%94%9A%E7%82%B9">锚点</a></li>
+<li><a href="#%E5%BC%BA%E8%B0%83">强调</a>
+<ul>
+<li><a href="#%E6%96%9C%E4%BD%93">斜体</a></li>
+<li><a href="#%E7%B2%97%E4%BD%93">粗体</a></li>
+<li><a href="#%E5%88%A0%E9%99%A4%E7%BA%BF">删除线</a></li>
+</ul>
+</li>
+<li><a href="#%E5%88%97%E8%A1%A8">列表</a>
+<ul>
+<li><a href="#%E6%97%A0%E5%BA%8F%E5%88%97%E8%A1%A8">无序列表</a></li>
+<li><a href="#%E6%9C%89%E5%BA%8F%E5%88%97%E8%A1%A8">有序列表</a></li>
+<li><a href="#%E5%8C%85%E5%90%AB%E5%BC%95%E7%94%A8%E7%9A%84%E5%88%97%E8%A1%A8">包含引用的列表</a></li>
+</ul>
+</li>
+<li><a href="#%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87">插入图片</a>
+<ul>
+<li><a href="#%E5%9B%BE%E7%89%87%E8%A1%8C%E5%86%85%E5%BC%8F">图片行内式</a></li>
+<li><a href="#%E5%9B%BE%E7%89%87%E5%8F%82%E8%80%83%E5%BC%8F">图片参考式</a></li>
+</ul>
+</li>
+<li><a href="#%E8%A1%A8%E6%A0%BC">表格</a></li>
+<li><a href="#%E4%BB%A3%E7%A0%81">代码</a>
+<ul>
+<li><a href="#%E4%BB%A3%E7%A0%81%E8%A1%8C%E5%86%85%E5%BC%8F">代码行内式</a></li>
+<li><a href="#%E7%BC%A9%E8%BF%9B%E5%BC%8F%E5%A4%9A%E8%A1%8C%E4%BB%A3%E7%A0%81">缩进式多行代码</a></li>
+<li><a href="#%E7%94%A8%E5%85%AD%E4%B8%AA--%E5%8C%85%E8%A3%B9%E5%A4%9A%E8%A1%8C%E4%BB%A3%E7%A0%81">用六个`包裹多行代码</a></li>
+<li><a href="#html-%E5%8E%9F%E5%A7%8B%E7%A0%81">HTML 原始码</a></li>
+</ul>
+</li>
+<li><a href="#%E5%86%85%E5%AE%B9%E7%9B%AE%E5%BD%95">内容目录</a></li>
+<li><a href="#%E6%B3%A8%E8%84%9A">注脚</a></li>
+<li><a href="#latex-%E5%85%AC%E5%BC%8F">LaTeX 公式</a>
+<ul>
+<li><a href="#-%E8%A1%A8%E7%A4%BA%E8%A1%8C%E5%86%85%E5%85%AC%E5%BC%8F">$ 表示行内公式</a></li>
+<li><a href="#-%E8%A1%A8%E7%A4%BA%E6%95%B4%E8%A1%8C%E5%85%AC%E5%BC%8F">$$ 表示整行公式</a></li>
+</ul>
+</li>
+<li><a href="#%E6%B5%81%E7%A8%8B%E5%9B%BE">流程图</a></li>
+<li><a href="#%E6%97%B6%E5%BA%8F%E5%9B%BE">时序图</a></li>
+<li><a href="#%E5%BE%85%E5%8A%9E%E4%BA%8B%E5%AE%9C%E5%88%97%E8%A1%A8">待办事宜列表</a></li>
+</ul>
+<h2>分级标题</h2>
+<p>第一种写法:</p>
+<pre><code class="language-markdown"><span class="hljs-section">这是一个一级标题
+============================</span>
+
+<span class="hljs-section">这是一个二级标题
+--------------------------------------------------</span>
+</code></pre>
+<blockquote>
+<h1>这是一个一级标题</h1>
+<h2>这是一个二级标题</h2>
+</blockquote>
+<hr>
+<p>第二种写法:</p>
+<pre><code class="language-markdown"><span class="hljs-section"># 一级标题</span>
+<span class="hljs-section">## 二级标题</span>
+<span class="hljs-section">### 三级标题</span>
+<span class="hljs-section">#### 四级标题</span>
+<span class="hljs-section">##### 五级标题</span>
+<span class="hljs-section">###### 六级标题</span>
+</code></pre>
+<blockquote>
+<h1>一级标题</h1>
+<h2>二级标题</h2>
+<h3>三级标题</h3>
+<h4>四级标题</h4>
+<h5>五级标题</h5>
+<h6>六级标题</h6>
+</blockquote>
+<h2>分隔线</h2>
+<p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线, 行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线:</p>
+<pre><code class="language-markdown"><span class="hljs-bullet">* </span><span class="hljs-bullet">* *</span>
+
+<span class="hljs-emphasis">***</span>
+
+<span class="hljs-strong">*****</span>
+<span class="hljs-bullet">
+- </span>- -
+
+---------------------------------------
+</code></pre>
+<blockquote>
+<hr>
+<hr>
+</blockquote>
+<h2>超链接</h2>
+<p>Markdown 支持两种形式的链接语法: 行内式和参考式两种形式, 行内式一般使用较多。</p>
+<h3>行内式</h3>
+<p><code>[]</code>里写链接文字，<code>()</code>里写链接地址, <code>()</code>中的 <code>&quot;&quot;</code> 中可以为链接指定title属性, title属性可加可不加。title属性的效果是鼠标悬停在链接上会出现指定的 title文字。<code>[链接文字](链接地址 &quot;链接标题&quot;)</code> 这样的形式。链接地址与链接标题前有一个空格。</p>
+<pre><code class="language-markdown">[<span class="hljs-string">Markdown Syntax</span>](<span class="hljs-link">https://github.com/cdoco/markdown-syntax</span>)
+[<span class="hljs-string">Markdown Syntax</span>](<span class="hljs-link">https://github.com/cdoco/markdown-syntax "Markdown Syntax"</span>)
+</code></pre>
+<blockquote>
+<p><a href="https://github.com/cdoco/markdown-syntax">Markdown Syntax</a>
+&lt;br /&gt;</p>
+<p><a href="https://github.com/cdoco/markdown-syntax" title="Markdown Syntax">Markdown Syntax</a></p>
+</blockquote>
+<h3>参考式</h3>
+<p>参考式超链接一般用在学术论文上面, 或者另一种情况, 如果某一个链接在文章中多处使用, 那么使用引用的方式创建链接将非常好, 它可以让你对链接进行统一的管理。</p>
+<p>参考式链接分为两部分, 文中的写法 <code>[链接文字][链接标记]</code>，在文本的任意位置添加 <code>[链接标记]:链接地址 &quot;链接标题&quot;</code>, 链接地址与链接标题前有一个空格。</p>
+<pre><code class="language-markdown">全球最大的搜索引擎网站是[<span class="hljs-string">Google</span>][<span class="hljs-symbol">1</span>]。
+
+[<span class="hljs-symbol">1</span>]:<span class="hljs-link">http://www.google.com "Google"</span>
+</code></pre>
+<blockquote>
+<p>全球最大的搜索引擎网站是 <a href="http://www.google.com" title="Google">Google</a>。
+&lt;br /&gt;</p>
+</blockquote>
+<h3>自动链接</h3>
+<p>Markdown 支持以比较简短的自动链接形式来处理网址和电子邮件信箱, 只要是用 <code>&lt;&gt;</code> 包起来， Markdown 就会自动把它转成链接。一般网址的链接文字就和链接地址一样, 例如:</p>
+<pre><code class="language-markdown"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">https:</span>//<span class="hljs-attr">google.com</span>/&gt;</span></span>
+
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ocdoco@gmail.com</span>&gt;</span></span>
+</code></pre>
+<blockquote>
+<p><a href="https://google.com/">https://google.com/</a>
+&lt;br /&gt;</p>
+<p><a href="mailto:ocdoco@gmail.com">ocdoco@gmail.com</a></p>
+</blockquote>
+<h2>区块引用</h2>
+<p>区块引用需要在被引用的文本前加上 <code>&gt;</code> 符号。</p>
+<pre><code class="language-markdown"><span class="hljs-quote">&gt; 这是一个区块引用实例,</span>
+
+<span class="hljs-quote">&gt; Markdown.</span>
+</code></pre>
+<blockquote>
+<p>这是一个区块引用实例,</p>
+</blockquote>
+<blockquote>
+<p>Markdown.</p>
+</blockquote>
+<p>Markdown 也允许你偷懒只在整个段落的第一行最前面加上 <code>&gt;</code> :</p>
+<pre><code class="language-markdown"><span class="hljs-quote">&gt; 平生不会相思,</span>
+才会相思,
+便害相思。
+
+<span class="hljs-quote">&gt; 空一缕余香在此,</span>
+盼千金游子何之。
+</code></pre>
+<blockquote>
+<p>平生不会相思,
+才会相思,
+便害相思。</p>
+</blockquote>
+<blockquote>
+<p>空一缕余香在此,
+盼千金游子何之。</p>
+</blockquote>
+<h3>引用的多层嵌套</h3>
+<p>区块引用可以嵌套（例如：引用内的引用）, 只要根据层次加上不同数量的 <code>&gt;</code> :</p>
+<pre><code class="language-markdown">&gt;&gt;&gt; 锄禾日当午, 汗滴禾下土。 - 李绅
+
+&gt;&gt; 山有木兮木有枝, 心悦君兮君不知。 - 越人歌
+
+<span class="hljs-quote">&gt; 去年今日此门中, 人面桃花相映红。 - 崔护</span>
+</code></pre>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>锄禾日当午, 汗滴禾下土。 - 李绅</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>山有木兮木有枝, 心悦君兮君不知。 - 越人歌</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>去年今日此门中, 人面桃花相映红。 - 题都城南庄</p>
+</blockquote>
+<h3>引用其它要素</h3>
+<p>引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等:</p>
+<pre><code class="language-markdown"><span class="hljs-quote">&gt; - 入我相思门, 知我相思苦。</span>
+<span class="hljs-quote">&gt;
+&gt; - 长相思兮长相忆, 短相思兮无穷极。</span>
+<span class="hljs-quote">&gt;
+&gt; - 给出一些例子代码:</span>
+<span class="hljs-quote">&gt; ```markdown</span>
+<span class="hljs-quote">&gt;   return debug_backtrace();</span>
+<span class="hljs-quote">&gt; ```</span>
+</code></pre>
+<blockquote>
+<ul>
+<li>
+<p>入我相思门, 知我相思苦。</p>
+</li>
+<li>
+<p>长相思兮长相忆, 短相思兮无穷极。</p>
+</li>
+<li>
+<p>给出一些例子代码:</p>
+</li>
+</ul>
+<pre><code class="language-markdown">  return debug_backtrace();
+</code></pre>
+</blockquote>
+<h2>锚点</h2>
+<p>网页中, 锚点其实就是页内超链接, 也就是链接本文档内部的某些元素, 实现当前页面中的跳转。比如我这里写下一个锚点, 点击回到目录, 就能跳转到目录。 在目录中点击这一节, 就能跳过来。还有下一节的注脚。这些根本上都是用锚点来实现的。</p>
+<pre><code class="language-markdown"><span class="hljs-strong">**[⬆ top](#什么是-markdown-)**</span>
+</code></pre>
+<p><strong><a href="#%E4%BB%80%E4%B9%88%E6%98%AF-markdown-">⬆ top</a></strong></p>
+<h2>强调</h2>
+<p>Markdown 使用星号<code>*</code>和底线<code>_</code>作为标记强调字词的符号。</p>
+<h3>斜体</h3>
+<pre><code class="language-markdown"><span class="hljs-emphasis">*花自飘零水自流*</span>
+</code></pre>
+<blockquote>
+<p><em>花自飘零水自流</em></p>
+</blockquote>
+<h3>粗体</h3>
+<pre><code class="language-markdown"><span class="hljs-strong">**花自飘零水自流**</span>
+</code></pre>
+<blockquote>
+<p><strong>花自飘零水自流</strong></p>
+</blockquote>
+<h3>删除线</h3>
+<pre><code class="language-markdown">~~花自飘零水自流~~
+</code></pre>
+<blockquote>
+<p><s>花自飘零水自流</s></p>
+</blockquote>
+<h2>列表</h2>
+<p>使用 *，+，- 表示无序列表。</p>
+<h3>无序列表</h3>
+<pre><code class="language-markdown"><span class="hljs-bullet">- </span>白头吟
+<span class="hljs-bullet">- </span>击鼓
+<span class="hljs-bullet">- </span>断句
+</code></pre>
+<blockquote>
+<ul>
+<li>
+<p>白头吟</p>
+</li>
+<li>
+<p>击鼓</p>
+</li>
+<li>
+<p>断句</p>
+</li>
+</ul>
+</blockquote>
+<h3>有序列表</h3>
+<p>有序列表则使用数字接着一个英文句点。</p>
+<pre><code class="language-markdown"><span class="hljs-bullet">1. </span>白头吟
+<span class="hljs-bullet">2. </span>击鼓
+<span class="hljs-bullet">3. </span>断句
+</code></pre>
+<blockquote>
+<ol>
+<li>
+<p>白头吟</p>
+</li>
+<li>
+<p>击鼓</p>
+</li>
+<li>
+<p>断句</p>
+</li>
+</ol>
+</blockquote>
+<h3>包含引用的列表</h3>
+<p>如果要在列表项目内放进引用，那 <code>&gt;</code> 就需要缩进:</p>
+<pre><code class="language-markdown"><span class="hljs-bullet">* </span>菩提偈:
+
+  &gt; 菩提本无树，明镜亦非台。
+  &gt; 本来无一物，何处惹尘埃！
+</code></pre>
+<ul>
+<li>
+<p>菩提偈:</p>
+<blockquote>
+<p>菩提本无树，明镜亦非台。
+本来无一物，何处惹尘埃！</p>
+</blockquote>
+</li>
+</ul>
+<h2>插入图片</h2>
+<p>图片的创建方式与超链接相似, 而且和超链接一样也有两种写法, 行内式和参考式写法。</p>
+<p>语法中图片Alt的意思是如果图片因为某些原因不能显示, 就用定义的图片Alt文字来代替图片。 图片Title则和链接中的Title一样, 表示鼠标悬停与图片上时出现的文字。 Alt 和 Title 都不是必须的, 可以省略, 但建议写上。</p>
+<h3>图片行内式</h3>
+<p><code>![图片Alt](图片地址 &quot;图片Title&quot;)</code></p>
+<pre><code class="language-markdown">![<span class="hljs-string">哆啦A梦</span>](<span class="hljs-link">https://cdoco.com/images/duolaameng.jpeg "哆啦A梦"</span>)
+</code></pre>
+<p><img src="https://cdoco.com/images/duolaameng.jpeg" alt="哆啦A梦" title="哆啦A梦"></p>
+<h3>图片参考式</h3>
+<p>在文档要插入图片的地方写 <code>![图片Alt][标记]</code>。</p>
+<p>在文档的最后写上 <code>[标记]:图片地址 &quot;Title&quot;</code>。</p>
+<pre><code class="language-markdown">![<span class="hljs-string">哆啦A梦</span>][<span class="hljs-symbol">duolaameng</span>]
+
+[<span class="hljs-symbol">duolaameng</span>]:<span class="hljs-link">https://cdoco.com/images/duolaameng.jpeg "哆啦A梦"</span>
+</code></pre>
+<p><img src="https://cdoco.com/images/duolaameng.jpeg" alt="哆啦A梦" title="哆啦A梦"></p>
+<h2>表格</h2>
+<ol>
+<li>不管是哪种方式, 第一行为表头, 第二行分隔表头和主体部分, 第三行开始每一行为一个表格行。</li>
+<li>列于列之间用管道符<code>|</code>隔开。原生方式的表格每一行的两边也要有管道符。</li>
+<li>第二行还可以为不同的列指定对齐方向。默认为左对齐, 在<code>-</code>右边加上<code>:</code>就右对齐。</li>
+</ol>
+<p>简单方式:</p>
+<pre><code class="language-markdown">诗名|作者|朝代
+-|-|-
+白头吟|卓文君|两汉
+锦瑟|李商隐|唐代
+登科后|孟郊|唐代
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>诗名</th>
+<th>作者</th>
+<th>朝代</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白头吟</td>
+<td>卓文君</td>
+<td>两汉</td>
+</tr>
+<tr>
+<td>锦瑟</td>
+<td>李商隐</td>
+<td>唐代</td>
+</tr>
+<tr>
+<td>登科后</td>
+<td>孟郊</td>
+<td>唐代</td>
+</tr>
+</tbody>
+</table>
+<p>原生方式:</p>
+<pre><code class="language-markdown">|诗名|作者|朝代|
+|-|-|-|
+|白头吟|卓文君|两汉|
+|锦瑟|李商隐|唐代|
+|登科后|孟郊|唐代|
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>诗名</th>
+<th>作者</th>
+<th>朝代</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>白头吟</td>
+<td>卓文君</td>
+<td>两汉</td>
+</tr>
+<tr>
+<td>锦瑟</td>
+<td>李商隐</td>
+<td>唐代</td>
+</tr>
+<tr>
+<td>登科后</td>
+<td>孟郊</td>
+<td>唐代</td>
+</tr>
+</tbody>
+</table>
+<p>为表格第二列指定方向:</p>
+<pre><code class="language-markdown">诗名|名句
+-|-:
+梦微之|君埋泉下泥销骨。
+上邪|上邪，我欲与君相知，长命无绝衰。
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>诗名</th>
+<th style="text-align:right">名句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>梦微之</td>
+<td style="text-align:right">君埋泉下泥销骨。</td>
+</tr>
+<tr>
+<td>上邪</td>
+<td style="text-align:right">上邪，我欲与君相知，长命无绝衰。</td>
+</tr>
+</tbody>
+</table>
+<h2>代码</h2>
+<p>对于程序员来说这个功能是必不可少的, 插入程序代码的方式有两种, 一种是利用缩进(Tab), 另一种是利用 &quot;`&quot; 符号(一般在ESC键下方)包裹代码。</p>
+<ul>
+<li>插入行内代码, 即插入一个单词或者一句代码的情况，使用 `code` 这样的形式插入。</li>
+<li>插入多行代码, 可以使用缩进或者 ``` code ```, 具体看示例。</li>
+</ul>
+<h3>代码行内式</h3>
+<pre><code class="language-markdown">PHP打印堆栈信息 <span class="hljs-code">`debug_backtrace()`</span>。
+</code></pre>
+<blockquote>
+<p>PHP打印堆栈信息 <code>debug_backtrace()</code>。</p>
+</blockquote>
+<h3>缩进式多行代码</h3>
+<p>缩进 4 个空格或是 1 个制表符。</p>
+<p>一个代码区块会一直持续到没有缩进的那一行(或是文件结尾)。</p>
+<pre><code class="language-markdown"><span class="hljs-code">    $closure = function () use($name) {</span>
+<span class="hljs-code">      return $name;</span>
+<span class="hljs-code">    }</span>
+</code></pre>
+<pre><code>$closure = function () use($name) {
+  return $name;
+}
+</code></pre>
+<h3>用六个 ` 包裹多行代码</h3>
+<pre><code class="language-php">```php
+$closure = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> <span class="hljs-title">use</span><span class="hljs-params">($name)</span> </span>{
+  <span class="hljs-keyword">return</span> $name;
+}
+` ``
+</code></pre>
+<pre><code class="language-php">$closure = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">()</span> <span class="hljs-title">use</span><span class="hljs-params">($name)</span> </span>{
+  <span class="hljs-keyword">return</span> $name;
+}
+</code></pre>
+<h3>HTML 原始码</h3>
+<p>在代码区块里面, <code>&amp;</code> 、 <code>&lt;</code> 和 <code>&gt;</code> 会自动转成 HTML 实体, 这样的方式让你非常容易使用 Markdown 插入范例用的 HTML 原始码, 只需要复制贴上, 剩下的 Markdown 都会帮你处理，例如:</p>
+<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span> <span class="hljs-attr">rowspan</span>=<span class="hljs-string">"2"</span>&gt;</span>值班人员<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>星期一<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>星期二<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>星期三<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>李强<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>张明<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>王平<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+</code></pre>
+<p>&lt;table&gt;
+&lt;tr&gt;
+&lt;th rowspan=&quot;2&quot;&gt;值班人员&lt;/th&gt;
+&lt;th&gt;星期一&lt;/th&gt;
+&lt;th&gt;星期二&lt;/th&gt;
+&lt;th&gt;星期三&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;李强&lt;/td&gt;
+&lt;td&gt;张明&lt;/td&gt;
+&lt;td&gt;王平&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;</p>
+<h3>内容目录</h3>
+<p>在段落中填写 <code>[TOC]</code> 以显示全文内容的目录结构。</p>
+<h2>注脚</h2>
+<p>在需要添加注脚的文字后加上脚注名字<code>[^注脚名字]</code>, 称为加注。 然后在文本的任意位置(一般在最后)添加脚注, 脚注前必须有对应的脚注名字。</p>
+<pre><code class="language-markdown">使用 Markdown[^1]可以效率的书写文档, 直接转换成 HTML[^2]。
+
+[<span class="hljs-symbol">^1</span>]: <span class="hljs-link">Markdown 是一种纯文本标记语言</span>
+
+[<span class="hljs-symbol">^2</span>]: <span class="hljs-link">HyperText Markup Language 超文本标记语言</span>
+</code></pre>
+<p>PS: github 不支持注脚 :joy:</p>
+<h2>LaTeX 公式</h2>
+<h3>$ 表示行内公式</h3>
+<pre><code class="language-markdown">质能守恒方程可以用一个很简洁的方程式 $E=mc^2$ 来表达。
+</code></pre>
+<p>质能守恒方程可以用一个很简洁的方程式 <img src="https://latex.codecogs.com/gif.latex?E=mc%5E2" alt=""> 来表达。</p>
+<h3>$$ 表示整行公式</h3>
+<pre><code class="language-markdown">$$\sum<span class="hljs-emphasis">_{i=1}^n a_</span>i=0$$
+$$f(x<span class="hljs-emphasis">_1,x_</span>x,\ldots,x<span class="hljs-emphasis">_n) = x_</span>1^2 + x<span class="hljs-emphasis">_2^2 + \cdots + x_</span>n^2 $$
+$$\sum^{j-1}<span class="hljs-emphasis">_{k=0}{\widehat{\gamma}_</span>{kj} z_k}$$
+</code></pre>
+<p>PS: github 不支持 LaTeX 公式, 但是有个折中的解决方案, 使用 codecogs, 例如:</p>
+<pre><code class="language-markdown">![](https://latex.codecogs.com/gif.latex?sum<span class="hljs-emphasis">_{i=1}^n%20a_</span>i=0)
+![](https://latex.codecogs.com/gif.latex?f\(x<span class="hljs-emphasis">_1,x_</span>x,\ldots,x<span class="hljs-emphasis">_n\)%20=%20x_</span>1^2%20+%20x<span class="hljs-emphasis">_2^2%20+%20\cdots%20+%20x_</span>n^2%20)
+</code></pre>
+<p><img src="https://latex.codecogs.com/gif.latex?sum_%7Bi=1%7D%5En%20a_i=0" alt=""></p>
+<p><img src="https://latex.codecogs.com/gif.latex?f(x_1,x_x,%5Cldots,x_n)%20=%20x_1%5E2%20+%20x_2%5E2%20+%20%5Ccdots%20+%20x_n%5E2%20" alt=""></p>
+<h2>流程图</h2>
+<p>流程图大致分为两段, 第一段是定义元素, 第二段是定义元素之间的走向。</p>
+<p>定义元素的语法 <code>tag=&gt;type: content:&gt;url</code>。</p>
+<ul>
+<li>tag就是元素名字。</li>
+<li>type是这个元素的类型, 有6中类型,分别为:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td>开始</td>
+</tr>
+<tr>
+<td>end</td>
+<td>结束</td>
+</tr>
+<tr>
+<td>operation</td>
+<td>操作</td>
+</tr>
+<tr>
+<td>subroutine</td>
+<td>子程序</td>
+</tr>
+<tr>
+<td>condition</td>
+<td>条件</td>
+</tr>
+<tr>
+<td>inputoutput</td>
+<td>输入或产出</td>
+</tr>
+</tbody>
+</table>
+<p>content 就是在框框中要写的内容, 注意type后的冒号与文本之间一定要有个空格。</p>
+<p>用<code>-&gt;</code>来连接两个元素, 需要注意的是condition类型, 因为他有yes和no两个分支, 所以要写成:</p>
+<pre><code class="language-markdown">c2(yes)-&gt;io-&gt;e
+c2(no)-&gt;op2-&gt;e
+</code></pre>
+<pre><code class="language-markdown"><span class="hljs-code">```flow
+st=&gt;start: Start:&gt;https://www.markdown-syntax.com
+io=&gt;inputoutput: verification
+op=&gt;operation: Your Operation
+cond=&gt;condition: Yes or No?
+sub=&gt;subroutine: Your Subroutine
+e=&gt;end
+st-&gt;io-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;sub-&gt;io
+` ``
+</span></code></pre>
+<p><img src="https://cdoco.com/images/flow.png" alt=""></p>
+<p>PS: github 不支持流程图 :joy:</p>
+<h2>时序图</h2>
+<pre><code class="language-markdown"><span class="hljs-code">```sequence
+Alice-&gt;Bob: Hello Bob, how are you ?
+Note right of Bob: Bob thinks
+Bob--&gt;Alice: I am good thanks!
+` ``
+</span></code></pre>
+<p><img src="https://cdoco.com/images/sequence.png" alt=""></p>
+<p>PS: github 不支持时序图 :joy:</p>
+<h2>待办事宜列表</h2>
+<p>使用带有 <code>[ ]</code> 或 <code>[x]</code> (未完成或已完成)项的列表语法撰写一个待办事宜列表, 例如:</p>
+<pre><code class="language-markdown"><span class="hljs-bullet">* </span>[ ] 早起跑步
+<span class="hljs-bullet">* </span>[x] 看书
+</code></pre>
+<ul>
+<li>[ ] 早起跑步</li>
+<li>[x] 看书</li>
+</ul>
+
+      </article>
+    </div>
+    <div class="col-lg-3 d-lg-block d-none"></div>
+  </div>
+
+</main>
+
+<div class="footer text-center">
+  Copyright© Liao | Powered by <a href="https://github.com/BigLiao/sinblog">SinBlog</a>
+</div>
+
+
+
+    
+    <script src="/sinblog/assets/js/blog.0fd0aaba.js"></script>
+    
+
+  </body>
+</html>

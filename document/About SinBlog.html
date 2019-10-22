@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>About SinBlog - Sin·Blog</title>
+
+    
+    <link rel="stylesheet" href="/sinblog/assets/css/blog.5fbbaad4.css">
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="/sinblog/">Sin·Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item home">
+        <a class="nav-link active" href="/sinblog/document">文档</a>
+      </li>
+      
+      <li class="nav-item home">
+        <a class="nav-link " href="/sinblog/literature">文学</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</nav>
+
+
+<main class="container pt-2">
+  <div class="row">
+    <div class="col-lg-9">
+      <article class="markdown-body">
+        <h1>SinBlog</h1>
+<blockquote>
+<p>An elegant blog site generator</p>
+</blockquote>
+<p><a href="https://bigliao.github.io/sinblog/">Demo and Docs</a>
+<a href="https://bigliao.github.io/sinblog/document/">示例和文档</a></p>
+<pre><code class="language-bash"><span class="hljs-comment"># Check into your blog folder</span>
+<span class="hljs-built_in">cd</span> &lt;YOUR_BLOG_FOLDER&gt;
+
+<span class="hljs-comment"># Initialize</span>
+sinblog init
+
+<span class="hljs-comment"># Configuration...</span>
+
+<span class="hljs-comment"># Build</span>
+sinblog build
+
+<span class="hljs-comment"># Publish to GitHub Pages</span>
+sinblog publish
+</code></pre>
+<h2>Features</h2>
+<ul>
+<li>
+<p>Simple, fast and elegant</p>
+</li>
+<li>
+<p>Support Markdown and Latex</p>
+</li>
+<li>
+<p>Pure static website generator, you can deploy it anywhere</p>
+</li>
+<li>
+<p>One-command to build and publish</p>
+</li>
+</ul>
+<p>Still developing day and night...</p>
+<h2>Todos</h2>
+<ul>
+<li>Searching and tag filter supports</li>
+<li>More themes</li>
+<li>Home page and about-me page layouts</li>
+<li>Upload local images in Markdown</li>
+</ul>
+<p>Need some other features? You can open an issure.</p>
+<h2>Usage with Trivas CI</h2>
+<p>By using <a href="https://github.com">GitHUb</a> and <a href="https://travis-ci.com/">Trivas CI</a> , It is quite easy to publish your blogs. Just a config file and then no worry about any program and environment stuffs.</p>
+<p><a href="https://bigliao.github.io/sinblog/document/Use%20SinBlog%20with%20Travis%20CI.html">Use SinBlog with Trival CI</a></p>
+<h2>Usage with command line</h2>
+<h3>Installation</h3>
+<p>SinBlog is powered by <a href="https://nodejs.org">Node.js</a>. Before install, you should have the environment.</p>
+<p>Use <code>npm</code> to install SinBlog:</p>
+<pre><code class="language-bash">npm install -g sinblog
+</code></pre>
+<h3>Initialize</h3>
+<p>Once SinBlog is installed, check into your blog folder in command line, and run the initialize command:</p>
+<pre><code class="language-bash"><span class="hljs-built_in">cd</span> &lt;YOUR_BLOG_FOLDER&gt;
+sinblog init
+</code></pre>
+<p>Now your blog folder may look like:</p>
+<pre><code class="language-plain">YOUR_BLOG_FOLDER
+|_technique
+  |_hello-world.md
+|_literature
+  |_some-blog.md
+|
+|_sinblog.config.yml
+</code></pre>
+<p>SinBlog added a configuration file, <code>sinblog.config.yml</code>, to your blog folder.</p>
+<p>Alternatively, you can create a <code>sinblog.config.yml</code> file by yourself, then copy and paste the configurations.</p>
+<h3>Configuration</h3>
+<p>SinBlog read configurations from file <code>sinblog.config.yml</code> (also support  <code>sinblog.config.json</code>) .</p>
+<p>Default <code>sinblog.config.yml</code>:</p>
+<pre><code class="language-yml"><span class="hljs-attr">site:</span>
+<span class="hljs-attr">  title:</span> <span class="hljs-string">Sin·Blog</span> <span class="hljs-comment"># Site name and title</span>
+<span class="hljs-attr">  author:</span> <span class="hljs-string">BigLiao</span>
+
+<span class="hljs-attr">build:</span>
+<span class="hljs-attr">  theme:</span> <span class="hljs-string">default</span> <span class="hljs-comment"># Only support default so far</span>
+<span class="hljs-attr">  blogPage:</span>
+<span class="hljs-attr">    - title:</span> <span class="hljs-string">Technique</span>
+<span class="hljs-attr">      dirPath:</span> <span class="hljs-string">./technique</span>
+<span class="hljs-attr">      urlPath:</span> <span class="hljs-string">technique</span>
+<span class="hljs-attr">    - title:</span> <span class="hljs-string">Literature</span>
+<span class="hljs-attr">      dirPath:</span> <span class="hljs-string">./literature</span>
+<span class="hljs-attr">      urlPath:</span> <span class="hljs-string">literature</span>
+<span class="hljs-attr">  pulicPath:</span> <span class="hljs-string">/</span>
+</code></pre>
+<p>Learn about YAML format:  <a href="https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/">YAML Tutorial: Everything You Need to Get Started in Minutes</a></p>
+<h5>site.title</h5>
+<p>Required. Type: string</p>
+<p>Shows at navbar and website title.</p>
+<h5>site.author</h5>
+<p>Required. Type: string</p>
+<p>Your name, shows at footer.</p>
+<h5>build.theme</h5>
+<p>Optional. Type: string. Default: <code>default</code>.</p>
+<p>Only supoort value <code>default</code>.</p>
+<h5>build.blogPage</h5>
+<p>Required. Type: string or array.</p>
+<p>If you only have one folder as your blog folder, you can set <code>build.blogPage</code> to the relative path (relative to configuration file):</p>
+<pre><code class="language-yaml"><span class="hljs-attr">build:</span>
+<span class="hljs-attr">  blogPage:</span> <span class="hljs-string">RELATIVE_PATH_TO_BLOG_FOLDER</span>
+</code></pre>
+<p>If you have more then one folder as different classes, you can set it an array, as the default demo.</p>
+<h6>build.blogPage[].title</h6>
+<p>Required. Type: string. Show at navbar.</p>
+<h6>build.blogPage[].dirPath</h6>
+<p>Required. Type: string. Relative path.</p>
+<h6>build.blogPage[].urlPath</h6>
+<p>Optional. Type: string. A sub URL path. If not specified, SinBlog will take the dirname.</p>
+<h5>pulicPath</h5>
+<p>Optional. Type: string. Default: <code>/</code>.</p>
+<p>If your website is in a subdirectory (such as <code>http://example.org/blog</code>),  you have to set <code>PublicPath</code> to  <code>/blog/</code>.</p>
+<h3>Build</h3>
+<p>Run just one command <code>sinblog build</code> in <code>&lt;YOUR_BLOG_FOLDER&gt;</code>.</p>
+<pre><code class="language-bash">sinblog build
+</code></pre>
+<p>SinBlog will generate a <code>.temp</code> folder and a <code>dist</code> folder in <code>&lt;YOUR_BLOG_FOLDER&gt;</code>. You should put these into your <code>.gitignore</code> file. The <code>.temp</code> folder is useless, I will remove it later. The <code>dist</code> folder contains final website files.</p>
+<h3>Serve</h3>
+<p>Serve the website locally:</p>
+<pre><code class="language-bash">sinblog serve
+</code></pre>
+<h3>Publish</h3>
+<h4>Publish to GitHub Pages</h4>
+<p>If your blog folder is under <code>git</code> control, and have related to GitHub....., You can publish your blog to <a href="https://pages.github.com/">GitHub Pages</a> by SinBlog.</p>
+<pre><code class="language-bash">sinblog publish
+</code></pre>
+<p>SinBlog will push the <code>dist</code> folder to <code>gh-pages</code> branch on GitHub.</p>
+<p>For example, if your GitHub repository URL is  <code>https://github.com/USER_NAME/blog/</code>, you can visite your blog site at <code>https://USER_NAME.github.io/blog/</code>.</p>
+
+      </article>
+    </div>
+    <div class="col-lg-3 d-lg-block d-none"></div>
+  </div>
+
+</main>
+
+<div class="footer text-center">
+  Copyright© Liao | Powered by <a href="https://github.com/BigLiao/sinblog">SinBlog</a>
+</div>
+
+
+
+    
+    <script src="/sinblog/assets/js/blog.0fd0aaba.js"></script>
+    
+
+  </body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Use SinBlog with Travis CI - Sin·Blog</title>
+
+    
+    <link rel="stylesheet" href="/sinblog/assets/css/blog.5fbbaad4.css">
+    
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+  <a class="navbar-brand" href="/sinblog/">Sin·Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      
+      <li class="nav-item home">
+        <a class="nav-link active" href="/sinblog/document">文档</a>
+      </li>
+      
+      <li class="nav-item home">
+        <a class="nav-link " href="/sinblog/literature">文学</a>
+      </li>
+      
+      
+    </ul>
+  </div>
+</nav>
+
+
+<main class="container pt-2">
+  <div class="row">
+    <div class="col-lg-9">
+      <article class="markdown-body">
+        <h1>Use SinBlog with Travis CI</h1>
+<p>This tutorial talks about how to use SinBlog with Travis CI to deploy your blog site automatically.</p>
+<p><img src="https://cdn.bigliao.com/c87a9d7ec9e1ec68986522b5e2836e5d.png" alt=""></p>
+<h2>Introduction</h2>
+<h3>What is Travis CI</h3>
+<p>CI is the abbreviation of Continuous Integration.</p>
+<p>Ok, It's a little complicated......</p>
+<blockquote>
+<p><em>Travis CI</em> is a hosted continuous integration service used to build and test software projects hosted at GitHub. <em>Travis CI</em> provides various paid plan for private projects, and a free plan for open source. TravisPro provides custom deployments of a proprietary version on the customer's own hardware.</p>
+<p>(Wikipedia)</p>
+</blockquote>
+<p>In short, Travis CI is a tool that can run automation scripts in your GitHub repository.</p>
+<p>Check their website for more information: <a href="https://travis-ci.com/">https://travis-ci.com</a>.</p>
+<p>It doesn't matter if you dono't understand what Travic CI do,  Just follow this tutorial.</p>
+<h2>Preparation</h2>
+<h3>A GitHub Repository</h3>
+<p>First, you should have a GitHub account. If you don't, click <a href="https://help.github.com/en/articles/signing-up-for-a-new-github-account">here</a> to register one.</p>
+<p>Create a repository to store your blogs.</p>
+<p>If you don't know how to use Git or GitHub, may be you are not very appropriate for this tutorial......</p>
+<h3>Setup Travis</h3>
+<p>Open  <a href="https://travis-ci.com/">travis-ci.com</a> in your broswer, click the big green button to sign up.</p>
+<p><img src="https://cdn.bigliao.com/de979f8fdcaa0f7a7c6d5405803d105c.png" alt="travis-ci.com"></p>
+<p>Follow the sign up guide and sign in at travis-ci.com.</p>
+<p>Click the green <em>Activate</em> button, and select the repositories you want to use with Travis CI.</p>
+<p>The official document is really explicit: <a href="https://docs.travis-ci.com/user/tutorial/?utm_source=help-page&amp;utm_medium=travisweb">Travis CI Tutorial</a></p>
+<h2>Configuration</h2>
+<h3>GitHub Token</h3>
+<p>In order to let Travis CI to control your GitHub repositroy, you need to generate a GitHub Token for Travis CI.</p>
+<p>Follow this document: <a href="https://help.github.com/en/articles/creating-a-personal-access-token-for-the-command-line">Creating a personal access token for the command line</a>.</p>
+<p>Select scopes as below:</p>
+<p><img src="https://cdn.bigliao.com/90832375e5b7992c27ba796864688877.png" alt=""></p>
+<p>Now you have a GitHub Token in your clipboard. Be careful don't lose it because you will not be able to see it again.</p>
+<h3>Set GitHub Token to Environment Value</h3>
+<p>Open the Dashboard at travis-ci.com, choose your target repositroy.</p>
+<p><img src="https://cdn.bigliao.com/879994784b5aae324962f6fa9ca66624.png" alt=""></p>
+<p>Click <code>More options</code> -&gt; <code>Settings</code>, scroll down, see the Environment Variables part.</p>
+<p><img src="https://cdn.bigliao.com/55e46521e9b633303faefc81875aedd2.png" alt=""></p>
+<p>Paste your GitHub Token in VALUE input, and set NAME to <code>GITHUB_TOKEN</code>, then click the Add button in the right.</p>
+<blockquote>
+<p><strong>Do not</strong>  turn the DISPLAY VALUE IN BUILD LOG option on.</p>
+</blockquote>
+<h3>Add <code>.travis.yml</code> to your repo</h3>
+<p>Create a file named <code>.travis.yml</code> in your blog directory, and copy this configurations:</p>
+<pre><code class="language-yml"><span class="hljs-attr">language:</span> <span class="hljs-string">node_js</span>
+<span class="hljs-attr">node_js:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">node</span>
+<span class="hljs-attr">install:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">npm</span> <span class="hljs-string">install</span> <span class="hljs-bullet">-g</span> <span class="hljs-string">sinblog</span>
+<span class="hljs-attr">script:</span>
+<span class="hljs-bullet">  -</span> <span class="hljs-string">sinblog</span> <span class="hljs-string">build</span>
+<span class="hljs-attr">deploy:</span>
+<span class="hljs-attr">  provider:</span> <span class="hljs-string">pages</span>
+<span class="hljs-attr">  local_dir:</span> <span class="hljs-string">dist</span>
+<span class="hljs-attr">  skip_cleanup:</span> <span class="hljs-literal">true</span>
+<span class="hljs-attr">  github_token:</span> <span class="hljs-string">$GITHUB_TOKEN</span>  <span class="hljs-comment"># Set in the settings page of your repository, as a secure variable</span>
+<span class="hljs-attr">  keep_history:</span> <span class="hljs-literal">false</span>
+<span class="hljs-attr">  on:</span>
+<span class="hljs-attr">    branch:</span> <span class="hljs-string">master</span>
+
+</code></pre>
+<p>Add <code>.travis.yml</code> to git control, and push it to GitHub.</p>
+<h3>SinBlog configurations</h3>
+<p>Add a <code>sinblog.config.yml</code> file. See <a href="#">SinBlog Docs</a> for more details.</p>
+<p>These are all steps you need to do.</p>
+<h2>Publication</h2>
+<p>How to publish a blog?</p>
+<ol>
+<li>Write a Markdown blog file, for example, <code>hello-world.md</code>.</li>
+<li><code>git add hello-world.md</code></li>
+<li><code>git commit -m 'blog'</code></li>
+<li><code>git push</code></li>
+</ol>
+<p>Then Travis CI will generate blog site, and push it to GitHub Pages. All is automacial.</p>
+<p>For example, if your GitHub repository URL is  <code>https://github.com/USER_NAME/blog/</code>, you can visite your blog site at <code>https://USER_NAME.github.io/blog/</code>.</p>
+
+      </article>
+    </div>
+    <div class="col-lg-3 d-lg-block d-none"></div>
+  </div>
+
+</main>
+
+<div class="footer text-center">
+  Copyright© Liao | Powered by <a href="https://github.com/BigLiao/sinblog">SinBlog</a>
+</div>
+
+
+
+    
+    <script src="/sinblog/assets/js/blog.0fd0aaba.js"></script>
+    
+
+  </body>
+</html>
